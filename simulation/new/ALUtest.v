@@ -20,6 +20,7 @@ alu uut(
 integer i;
 parameter [3:0] AND = 4'b0000, OR = 'b0001, add = 4'b0010, sub = 4'b0110, slt = 4'b0111, NOR = 4'b1100;
 initial begin
+    clk = 1'b0;
 for (i=0;i<100;i=i+1) begin 
         A = $random;
         B = $random;

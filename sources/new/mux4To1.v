@@ -1,10 +1,7 @@
 `timescale 1ns / 1ps
 
 module mux4To1(
-    input [31:0] in1,
-    input [31:0] in2,
-    input [31:0] in3,
-    input [31:0] in4,
+    input [31:0] in1, in2, in3, in4,
     input [1:0] s,
     output reg [31:0] out
     );
