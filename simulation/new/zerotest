@@ -2,17 +2,20 @@
 
 module zerotest;
     reg [15:0] imm16;
+    reg sz;
     wire [31:0] out;
-    zero_extend uut(
+    sign_and_zero_extend uut(
         .imm16(imm16),
+        .sz(sz),
         .out(out)
     );
     integer i;
     initial begin
         for (i=0;i<10;i=i+1) begin
+            sz = $random%2;
             imm16 = $random;
             #100
-            $display("imm16 = %b, signextended = %b",imm16,out);
+            $display("imm16 = %b, sz = %b, signextended = %b",imm16,out);
         end
     end
 endmodule
